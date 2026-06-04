@@ -1,2 +1,10 @@
 @import "tailwindcss";
+
+@theme {
+  --color-ember: var(--ember);
+  --color-cream: var(--cream);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+}
+
 @import "./capmob.css";

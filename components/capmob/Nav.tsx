@@ -12,23 +12,25 @@ export default function Nav({ onOpenMobile }: NavProps) {
       </a>
       <ul className="nav-links">
         <li>
-          <a href="#problem">The Problem</a>
-        </li>
-        <li>
-          <a href="#how">How It Works</a>
-        </li>
-        <li>
-          <a href="#products">Products</a>
-        </li>
-        <li>
           <a href="#solutions">Solutions</a>
+        </li>
+        <li>
+          <a href="#how">How it Works</a>
+        </li>
+        <li>
+          <a href="#problem">About</a>
         </li>
         <li>
           <a href="#faq">FAQs</a>
         </li>
         <li>
-          <a href="#cta" className="nav-cta">
-            Get My Best Deal →
+          <a href="#cta" className="nav-refer">
+            Refer &amp; Earn
+          </a>
+        </li>
+        <li>
+          <a href="#cta" className="nav-signin">
+            Sign in
           </a>
         </li>
       </ul>
