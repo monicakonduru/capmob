@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer>
@@ -72,7 +74,7 @@ export default function Footer() {
               <a href="#">Refer & Earn</a>
             </li>
             <li>
-              <a href="#">Privacy Policy</a>
+              <Link href="/privacy">Privacy Policy</Link>
             </li>
           </ul>
         </div>
