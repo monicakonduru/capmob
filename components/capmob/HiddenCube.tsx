@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useMotionTemplate, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const CUBE_EDGE = 280;
@@ -34,12 +34,12 @@ const faces = [
 ];
 
 const cubeFaces = [
-  { transform: `rotateY(0deg) translate3d(0, 0, ${CUBE_HALF}px)` },
-  { transform: `rotateY(180deg) translate3d(0, 0, ${CUBE_HALF}px)` },
-  { transform: `rotateY(90deg) translate3d(0, 0, ${CUBE_HALF}px)` },
-  { transform: `rotateY(-90deg) translate3d(0, 0, ${CUBE_HALF}px)` },
-  { transform: `rotateX(90deg) translate3d(0, 0, ${CUBE_HALF}px)` },
-  { transform: `rotateX(-90deg) translate3d(0, 0, ${CUBE_HALF}px)` },
+  `rotateY(0deg) translateZ(${CUBE_HALF}px)`,
+  `rotateY(180deg) translateZ(${CUBE_HALF}px)`,
+  `rotateY(90deg) translateZ(${CUBE_HALF}px)`,
+  `rotateY(-90deg) translateZ(${CUBE_HALF}px)`,
+  `rotateX(90deg) translateZ(${CUBE_HALF}px)`,
+  `rotateX(-90deg) translateZ(${CUBE_HALF}px)`,
 ];
 
 export function HiddenCube() {
@@ -47,45 +47,46 @@ export function HiddenCube() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const rotateX = useTransform(scrollYProgress, [0, 1], [14, -20]);
   const rotateY = useTransform(scrollYProgress, [0, 1], [-38, 360]);
-  const cubeRotate = useMotionTemplate`rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
   return (
     <div ref={ref} className="grid items-center gap-16 lg:grid-cols-2">
-      <div className="cube-stage">
+      <div
+        className="cube-stage relative mx-auto aspect-square w-full max-w-[420px]"
+        style={{ perspective: "1100px", perspectiveOrigin: "50% 50%" }}
+      >
         <div className="pointer-events-none absolute inset-0 radial-orange opacity-25 blur-3xl" />
-        <div className="cube-perspective">
-          <motion.div
-            className="cube-scene"
-            style={{
-              transform: cubeRotate,
-              transformStyle: "preserve-3d",
-            }}
-          >
-            {cubeFaces.map((face, i) => (
-              <div
-                key={i}
-                className="cube-face"
-                style={{
-                  width: CUBE_EDGE,
-                  height: CUBE_EDGE,
-                  marginLeft: -CUBE_HALF,
-                  marginTop: -CUBE_HALF,
-                  transform: face.transform,
-                }}
-              >
-                <div className="cube-face__fill" aria-hidden />
-                {faces[i] ? (
-                  <div className="cube-face__content">
-                    <div className="cube-face__label">{faces[i].title}</div>
-                    <div className="cube-face__value">{faces[i].value}</div>
-                  </div>
-                ) : (
-                  <div className="cube-face__logo">C</div>
-                )}
-              </div>
-            ))}
-          </motion.div>
-        </div>
+        <motion.div
+          className="cube-scene relative h-full w-full"
+          style={{
+            transformStyle: "preserve-3d",
+            rotateX,
+            rotateY,
+          }}
+        >
+          {cubeFaces.map((transform, i) => (
+            <div
+              key={i}
+              className="cube-face"
+              style={{
+                width: CUBE_EDGE,
+                height: CUBE_EDGE,
+                marginLeft: -CUBE_HALF,
+                marginTop: -CUBE_HALF,
+                transform,
+              }}
+            >
+              <div className="cube-face__fill" aria-hidden />
+              {faces[i] ? (
+                <div className="cube-face__content">
+                  <div className="cube-face__label">{faces[i].title}</div>
+                  <div className="cube-face__value">{faces[i].value}</div>
+                </div>
+              ) : (
+                <div className="cube-face__logo">C</div>
+              )}
+            </div>
+          ))}
+        </motion.div>
       </div>
 
       <div className="space-y-4">

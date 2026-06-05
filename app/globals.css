@@ -36,38 +36,18 @@
   color: #fff8f0;
 }
 
-/* HiddenCube — proper CSS 3D cube */
+/* HiddenCube — CSS 3D cube (faces centered on motion parent) */
 .capmob-site .cube-stage {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 380px;
-  max-width: 420px;
-  margin-inline: auto;
   overflow: visible;
 }
-.capmob-site .cube-perspective {
-  position: relative;
-  width: 100%;
-  height: 380px;
-  perspective: 1100px;
-  perspective-origin: 50% 50%;
-}
 .capmob-site .cube-scene {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 0;
-  height: 0;
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
 }
 .capmob-site .cube-face {
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 50%;
+  top: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,7 +55,6 @@
   border-radius: 1rem;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  transform-style: preserve-3d;
   border: 1px solid #c45a12;
   box-shadow:
     0 0 32px rgba(255, 107, 0, 0.2),
