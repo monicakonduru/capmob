@@ -1,2 +1,124 @@
 @import "tailwindcss";
+
+@theme {
+  --color-ember: var(--ember);
+  --color-cream: var(--cream);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+}
+
 @import "./capmob.css";
+
+/* Lovable export utilities (HiddenCube, PacmobAI) */
+.capmob-site .glass {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.capmob-site .glass-strong {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.capmob-site .text-gradient-orange {
+  background: linear-gradient(135deg, #ffb347, #ff6b00, #ff8a00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.capmob-site .radial-orange {
+  background: radial-gradient(circle, rgba(255, 107, 0, 0.45), transparent 70%);
+}
+.capmob-site .lovable-section {
+  background: #090909;
+  color: #fff8f0;
+}
+
+/* HiddenCube — proper CSS 3D cube */
+.capmob-site .cube-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 380px;
+  max-width: 420px;
+  margin-inline: auto;
+  overflow: visible;
+}
+.capmob-site .cube-perspective {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  perspective: 1100px;
+  perspective-origin: 50% 50%;
+}
+.capmob-site .cube-scene {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+.capmob-site .cube-face {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 1rem;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  border: 1px solid #c45a12;
+  box-shadow:
+    0 0 32px rgba(255, 107, 0, 0.2),
+    inset 0 1px 0 rgba(255, 200, 150, 0.15);
+}
+.capmob-site .cube-face__fill {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: #120c08;
+  pointer-events: none;
+}
+.capmob-site .cube-face__content {
+  position: relative;
+  z-index: 1;
+  padding: 1.5rem;
+  text-align: center;
+}
+.capmob-site .cube-face__label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffb347;
+  white-space: nowrap;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.capmob-site .cube-face__value {
+  margin-top: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 3.25rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #ff8a00;
+}
+.capmob-site .cube-face__logo {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: #ff6b00;
+}

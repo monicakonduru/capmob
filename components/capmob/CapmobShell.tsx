@@ -11,7 +11,8 @@ import Lenders from "./Lenders";
 import Marquee from "./Marquee";
 import MobileMenu, { useMobileMenu } from "./MobileMenu";
 import Nav from "./Nav";
-import ProblemSection from "./ProblemSection";
+import HiddenFourSection from "./HiddenFourSection";
+import PacmobAISection from "./PacmobAISection";
 import Products from "./Products";
 import Solutions from "./Solutions";
 import Testimonials from "./Testimonials";
@@ -26,7 +27,7 @@ export default function CapmobShell() {
       <Nav onOpenMobile={openMenu} />
       <Hero />
       <Marquee />
-      <ProblemSection />
+      <HiddenFourSection />
       <HowItWorks />
       <Products />
       <Solutions />

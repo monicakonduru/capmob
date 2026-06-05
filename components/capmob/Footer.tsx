@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer>
@@ -57,10 +59,10 @@ export default function Footer() {
           <h5>Company</h5>
           <ul>
             <li>
-              <a href="#">About Capmob</a>
+              <Link href="/about">About Capmob</Link>
             </li>
             <li>
-              <a href="#">How It Works</a>
+              <Link href="/how-it-works">How It Works</Link>
             </li>
             <li>
               <a href="#">Resources</a>
@@ -72,7 +74,7 @@ export default function Footer() {
               <a href="#">Refer & Earn</a>
             </li>
             <li>
-              <a href="#">Privacy Policy</a>
+              <Link href="/privacy">Privacy Policy</Link>
             </li>
           </ul>
         </div>
