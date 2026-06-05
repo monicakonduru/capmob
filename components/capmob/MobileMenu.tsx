@@ -26,8 +26,8 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
       <a href="#how" onClick={onClose}>
         How it Works
       </a>
-      <a href="#problem" onClick={onClose}>
-        About
+      <a href="#hidden" onClick={onClose}>
+        The Hidden 4
       </a>
       <a href="#faq" onClick={onClose}>
         FAQs

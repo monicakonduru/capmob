@@ -18,7 +18,7 @@ export default function Nav({ onOpenMobile }: NavProps) {
           <a href="#how">How it Works</a>
         </li>
         <li>
-          <a href="#problem">About</a>
+          <a href="#hidden">The Hidden 4</a>
         </li>
         <li>
           <a href="#faq">FAQs</a>
