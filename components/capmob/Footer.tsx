@@ -62,7 +62,7 @@ export default function Footer() {
               <Link href="/about">About Capmob</Link>
             </li>
             <li>
-              <a href="#">How It Works</a>
+              <Link href="/how-it-works">How It Works</Link>
             </li>
             <li>
               <a href="#">Resources</a>
