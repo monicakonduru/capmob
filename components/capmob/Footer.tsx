@@ -59,7 +59,7 @@ export default function Footer() {
           <h5>Company</h5>
           <ul>
             <li>
-              <a href="#">About Capmob</a>
+              <Link href="/about">About Capmob</Link>
             </li>
             <li>
               <a href="#">How It Works</a>
