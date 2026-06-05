@@ -68,6 +68,9 @@ export default function Footer() {
               <Link href="/insights">Insights</Link>
             </li>
             <li>
+              <Link href="/calculator">Loan Calculator</Link>
+            </li>
+            <li>
               <Link href="/privacy">Privacy Policy</Link>
             </li>
           </ul>
