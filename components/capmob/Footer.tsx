@@ -13,7 +13,7 @@ export default function Footer() {
             <br />
             Not a lender. Not a broker. Not a marketplace.
           </div>
-          <div className="footer-slogan">// Clarity Moves Capital</div>
+          <div className="footer-slogan">Clarity Moves Capital</div>
         </div>
         <div className="footer-col">
           <h5>Products</h5>
@@ -65,13 +65,10 @@ export default function Footer() {
               <Link href="/how-it-works">How It Works</Link>
             </li>
             <li>
-              <a href="#">Resources</a>
+              <Link href="/insights">Insights</Link>
             </li>
             <li>
-              <a href="#">FAQs</a>
-            </li>
-            <li>
-              <a href="#">Refer & Earn</a>
+              <Link href="/calculator">Loan Calculator</Link>
             </li>
             <li>
               <Link href="/privacy">Privacy Policy</Link>

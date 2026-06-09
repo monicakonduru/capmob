@@ -23,6 +23,9 @@ export default function LegalNav({ onOpenMobile }: LegalNavProps) {
           <Link href="/#products">Products</Link>
         </li>
         <li>
+          <Link href="/calculator">Calculator</Link>
+        </li>
+        <li>
           <Link href="/#faq">FAQs</Link>
         </li>
         <li>
